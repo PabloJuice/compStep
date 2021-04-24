@@ -105,6 +105,8 @@
 		C379443A26344712009B1889 /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				CE33A8722634625B00CEA354 /* services */,
+				CE33A8712634624B00CEA354 /* entities */,
 			);
 			path = Database;
 			sourceTree = "<group>";
