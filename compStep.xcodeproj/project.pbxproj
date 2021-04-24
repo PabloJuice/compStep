@@ -18,6 +18,8 @@
 		C379444526346178009B1889 /* RunDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C379444426346178009B1889 /* RunDetailsViewController.swift */; };
 		C379444926346228009B1889 /* NewRunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C379444826346228009B1889 /* NewRunViewController.swift */; };
 		C379445026346C0B009B1889 /* StoryboardSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = C379444F26346C0B009B1889 /* StoryboardSupport.swift */; };
+		C3794454263473DE009B1889 /* UnitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3794453263473DE009B1889 /* UnitExtensions.swift */; };
+		C379445726347817009B1889 /* FormatDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C379445626347817009B1889 /* FormatDisplay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		C379444426346178009B1889 /* RunDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunDetailsViewController.swift; sourceTree = "<group>"; };
 		C379444826346228009B1889 /* NewRunViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRunViewController.swift; sourceTree = "<group>"; };
 		C379444F26346C0B009B1889 /* StoryboardSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardSupport.swift; sourceTree = "<group>"; };
+		C3794453263473DE009B1889 /* UnitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitExtensions.swift; sourceTree = "<group>"; };
+		C379445626347817009B1889 /* FormatDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatDisplay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				C379444F26346C0B009B1889 /* StoryboardSupport.swift */,
+				C3794453263473DE009B1889 /* UnitExtensions.swift */,
+				C379445626347817009B1889 /* FormatDisplay.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -210,6 +216,8 @@
 				C379445026346C0B009B1889 /* StoryboardSupport.swift in Sources */,
 				C3794424263446F2009B1889 /* AppDelegate.swift in Sources */,
 				C3794426263446F2009B1889 /* SceneDelegate.swift in Sources */,
+				C379445726347817009B1889 /* FormatDisplay.swift in Sources */,
+				C3794454263473DE009B1889 /* UnitExtensions.swift in Sources */,
 				C379444526346178009B1889 /* RunDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

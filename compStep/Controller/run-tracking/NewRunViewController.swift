@@ -61,4 +61,11 @@ extension NewRunViewController: SegueHandlerType{
     enum SegueIdentifier: String {
         case details = "RunDetailsViewController"
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segueIdentifier(for: segue){
+            case .details:
+                let destination = segue.destination as! RunDetailsViewController
+        }
+    }
 }
