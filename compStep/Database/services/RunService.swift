@@ -1,39 +1,48 @@
 import Realm
 import RealmSwift
 
-class RunService: DatabaseService {
+class RunService{
     
     private let realm = try! Realm()
     
-    func findAll() -> Array<RunEntity> {
-//        return Array<RunEntity>(realm.objects(RunEntity.self))
-    }
-    
     func save(_ object: RunEntity) {
-//        if !checkIfExists(object) {
-//            try? realm.write{
-//                realm.add(object)
-//            }
-//        }else{
-//            update(object)
-//        }
-    }
-    
-    func update(_ object: RunEntity) {
-        
+        if !checkIfExists(object) {
+            try! realm.write{
+                realm.add(object)
+            }
+        }else{
+            try! realm.write{
+                realm.delete(object)
+                save(object)
+            }
+        }
     }
     
     func delete(_ object: RunEntity) {
-        <#code#>
+        try? realm.write{
+            let objects = findAll()
+                .compactMap{$0}
+                .filter {!object.equals(object: $0) }
+            
+            deleteAll()
+            objects.forEach{realm.add($0)}
+        }
     }
     
     func deleteAll() {
-        <#code#>
+        try? realm.write{
+            realm.delete(realm.objects(RunEntity.self))
+        }
     }
     
     func checkIfExists(_ object: RunEntity) -> Bool {
-        <#code#>
+        return findAll()
+            .compactMap{$0}
+            .filter {object.equals(object: $0) }
+            .count > 0
     }
     
-    
+    func findAll() -> Array<RunEntity> {
+        return Array<RunEntity>(realm.objects(RunEntity.self))
+    }
 }

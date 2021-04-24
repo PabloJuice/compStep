@@ -18,8 +18,8 @@
 		CE33A87E263464D900CEA354 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE33A87D263464D900CEA354 /* RealmSwift */; };
 		CE33A8842634673E00CEA354 /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE33A8832634673E00CEA354 /* Run.swift */; };
 		CE33A88726346B8500CEA354 /* RunService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE33A88626346B8500CEA354 /* RunService.swift */; };
-		CE33A88B26346BC000CEA354 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE33A88A26346BC000CEA354 /* DatabaseService.swift */; };
 		CE33A8902634719F00CEA354 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE33A88F2634719F00CEA354 /* User.swift */; };
+		CE33A89326347D8C00CEA354 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE33A89226347D8C00CEA354 /* UserService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,8 +34,8 @@
 		CE33A8742634635000CEA354 /* DatabaseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseObject.swift; sourceTree = "<group>"; };
 		CE33A8832634673E00CEA354 /* Run.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Run.swift; sourceTree = "<group>"; };
 		CE33A88626346B8500CEA354 /* RunService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunService.swift; sourceTree = "<group>"; };
-		CE33A88A26346BC000CEA354 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		CE33A88F2634719F00CEA354 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CE33A89226347D8C00CEA354 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				CE33A88626346B8500CEA354 /* RunService.swift */,
-				CE33A88A26346BC000CEA354 /* DatabaseService.swift */,
+				CE33A89226347D8C00CEA354 /* UserService.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -212,7 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE33A8752634635000CEA354 /* DatabaseObject.swift in Sources */,
-				CE33A88B26346BC000CEA354 /* DatabaseService.swift in Sources */,
+				CE33A89326347D8C00CEA354 /* UserService.swift in Sources */,
 				C3794428263446F2009B1889 /* ViewController.swift in Sources */,
 				CE33A8842634673E00CEA354 /* Run.swift in Sources */,
 				CE33A8902634719F00CEA354 /* User.swift in Sources */,
