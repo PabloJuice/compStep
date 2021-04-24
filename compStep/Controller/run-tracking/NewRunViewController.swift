@@ -24,6 +24,8 @@ class NewRunViewController: UIViewController {
     private var distance = Measurement(value: 0, unit: UnitLength.meters)
     private var locationList: [CLLocation] = []
     
+    private var runService: RunService = RunService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -79,6 +81,7 @@ class NewRunViewController: UIViewController {
     }
     
     private func saveRun(){
+        
     }
 
     func eachSecond(){
