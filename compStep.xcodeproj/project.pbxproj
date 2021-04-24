@@ -20,6 +20,7 @@
 		C379445026346C0B009B1889 /* StoryboardSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = C379444F26346C0B009B1889 /* StoryboardSupport.swift */; };
 		C3794454263473DE009B1889 /* UnitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3794453263473DE009B1889 /* UnitExtensions.swift */; };
 		C379445726347817009B1889 /* FormatDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C379445626347817009B1889 /* FormatDisplay.swift */; };
+		C379445B26347D1D009B1889 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C379445A26347D1D009B1889 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		C379444F26346C0B009B1889 /* StoryboardSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardSupport.swift; sourceTree = "<group>"; };
 		C3794453263473DE009B1889 /* UnitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitExtensions.swift; sourceTree = "<group>"; };
 		C379445626347817009B1889 /* FormatDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatDisplay.swift; sourceTree = "<group>"; };
+		C379445A26347D1D009B1889 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 		C3794422263446F2009B1889 /* compStep */ = {
 			isa = PBXGroup;
 			children = (
+				C379445926347D13009B1889 /* Managers */,
 				C379444E26346BE8009B1889 /* Supporting Files */,
 				C379443B2634471B009B1889 /* View */,
 				C379443A26344712009B1889 /* Database */,
@@ -132,6 +135,14 @@
 				C379445626347817009B1889 /* FormatDisplay.swift */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C379445926347D13009B1889 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				C379445A26347D1D009B1889 /* LocationManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +230,7 @@
 				C379445726347817009B1889 /* FormatDisplay.swift in Sources */,
 				C3794454263473DE009B1889 /* UnitExtensions.swift in Sources */,
 				C379444526346178009B1889 /* RunDetailsViewController.swift in Sources */,
+				C379445B26347D1D009B1889 /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
