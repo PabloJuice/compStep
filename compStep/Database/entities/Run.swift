@@ -1,6 +1,6 @@
 import Realm
 import RealmSwift
-import  Foundation
+import Foundation
 
 @objcMembers
 class RunEntity: Object, DatabaseObject{
@@ -55,4 +55,26 @@ class Location : Object{
     }
     
     override init() { }
+}
+
+@objcMembers
+class RouteMap: Object{
+    static var counter: Int = 1
+    
+    dynamic var routeMapID = RealmOptional<Int>(0)
+    dynamic var locations = List<Location>()
+    dynamic var name: String!
+    
+    init(locations: List<Location>, name: String?){
+        self.locations = locations
+        self.name = name
+        self.routeMapID = RealmOptional.init(RunEntity.counter)
+        RouteMap.counter += 1
+    }
+    
+    override init() { }
+    
+    func equals(object: RouteMap) -> Bool {
+        return self.routeMapID == object.routeMapID
+    }
 }

@@ -186,17 +186,32 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t2f-tQ-41V">
+                                <rect key="frame" x="86" y="784" width="242" height="53"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Create a route map">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="createRouteMapTapped:" destination="vzT-om-sVJ" eventType="touchUpInside" id="8c0-Cw-dbD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9mr-TD-HQM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="xWw-1O-d53" firstAttribute="centerX" secondItem="b5L-NA-0Vd" secondAttribute="centerX" id="0wJ-qK-3Y8"/>
+                            <constraint firstItem="9mr-TD-HQM" firstAttribute="bottom" secondItem="t2f-tQ-41V" secondAttribute="bottom" constant="25" id="7sm-VR-xXZ"/>
                             <constraint firstAttribute="trailing" secondItem="xWw-1O-d53" secondAttribute="trailing" id="9yV-sS-AB1"/>
                             <constraint firstItem="xWw-1O-d53" firstAttribute="leading" secondItem="P1a-h4-dEI" secondAttribute="leading" id="Bbw-Z2-utu"/>
                             <constraint firstItem="CaJ-zU-uJw" firstAttribute="leading" secondItem="9mr-TD-HQM" secondAttribute="leading" constant="101" id="G7b-zU-k8P"/>
+                            <constraint firstItem="t2f-tQ-41V" firstAttribute="leading" secondItem="9mr-TD-HQM" secondAttribute="leading" constant="86" id="GUk-wd-8pt"/>
                             <constraint firstItem="b5L-NA-0Vd" firstAttribute="top" secondItem="Zh1-FA-ThC" secondAttribute="bottom" constant="54.5" id="Gki-31-o91"/>
                             <constraint firstItem="b5L-NA-0Vd" firstAttribute="centerX" secondItem="Zh1-FA-ThC" secondAttribute="centerX" id="HIo-wt-QdH"/>
+                            <constraint firstItem="9mr-TD-HQM" firstAttribute="trailing" secondItem="t2f-tQ-41V" secondAttribute="trailing" constant="86" id="P7R-YR-Rh6"/>
                             <constraint firstItem="9mr-TD-HQM" firstAttribute="bottom" secondItem="b5L-NA-0Vd" secondAttribute="bottom" constant="160" id="W03-l4-DEb"/>
+                            <constraint firstItem="t2f-tQ-41V" firstAttribute="top" secondItem="b5L-NA-0Vd" secondAttribute="bottom" constant="82" id="YYQ-mQ-awI"/>
                             <constraint firstItem="CaJ-zU-uJw" firstAttribute="top" secondItem="xWw-1O-d53" secondAttribute="bottom" constant="8" symbolic="YES" id="aMt-5H-jhA"/>
                             <constraint firstItem="xWw-1O-d53" firstAttribute="centerX" secondItem="CaJ-zU-uJw" secondAttribute="centerX" id="gD0-lI-WJe"/>
                             <constraint firstItem="xWw-1O-d53" firstAttribute="top" secondItem="P1a-h4-dEI" secondAttribute="top" id="nC7-3W-zgp"/>
@@ -209,11 +224,98 @@
                         <outlet property="PaceLabel" destination="LLR-eC-6Zu" id="l8f-eR-Nk5"/>
                         <outlet property="TimeLabel" destination="t61-lr-b3J" id="cs8-A6-fSg"/>
                         <outlet property="mapView" destination="xWw-1O-d53" id="BJ3-ha-NLQ"/>
+                        <segue destination="Kl1-AR-hW5" kind="show" identifier="CreateRouteMapViewController" id="3iX-Ez-9Zy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r8m-6u-TQW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1753.6231884057972" y="81.696428571428569"/>
+            <point key="canvasLocation" x="2107" y="82"/>
+        </scene>
+        <!--Create Route Map View Controller-->
+        <scene sceneID="Kg8-4B-M47">
+            <objects>
+                <viewController id="Kl1-AR-hW5" customClass="CreateRouteMapViewController" customModule="compStep" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UkG-us-qZc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Give your route a name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HrF-OZ-lWN">
+                                <rect key="frame" x="104.5" y="130" width="207" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Rf-Fv-5Yd">
+                                <rect key="frame" x="72" y="735" width="272" height="36"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveTapped:" destination="Kl1-AR-hW5" eventType="touchUpInside" id="psK-bG-JDB"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter name here" textAlignment="natural" minimumFontSize="20" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="yGR-PB-JGL">
+                                <rect key="frame" x="72" y="199" width="272" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="19x-jz-Dc3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yGR-PB-JGL" firstAttribute="top" secondItem="UkG-us-qZc" secondAttribute="top" constant="199" id="1wD-QG-2iE"/>
+                            <constraint firstItem="0Rf-Fv-5Yd" firstAttribute="leading" secondItem="19x-jz-Dc3" secondAttribute="leading" constant="72" id="40t-5j-bhz"/>
+                            <constraint firstItem="0Rf-Fv-5Yd" firstAttribute="centerX" secondItem="HrF-OZ-lWN" secondAttribute="centerX" id="CZE-74-G43"/>
+                            <constraint firstItem="yGR-PB-JGL" firstAttribute="top" secondItem="HrF-OZ-lWN" secondAttribute="bottom" constant="45" id="SK7-lc-nRl"/>
+                            <constraint firstItem="19x-jz-Dc3" firstAttribute="trailing" secondItem="0Rf-Fv-5Yd" secondAttribute="trailing" constant="70" id="YmZ-r2-JdC"/>
+                            <constraint firstItem="0Rf-Fv-5Yd" firstAttribute="trailing" secondItem="yGR-PB-JGL" secondAttribute="trailing" id="eQk-bu-YQV"/>
+                            <constraint firstItem="0Rf-Fv-5Yd" firstAttribute="leading" secondItem="yGR-PB-JGL" secondAttribute="leading" id="hLf-Yb-W8o"/>
+                            <constraint firstItem="19x-jz-Dc3" firstAttribute="bottom" secondItem="0Rf-Fv-5Yd" secondAttribute="bottom" constant="37" id="lZM-KQ-oti"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="rUj-sv-oGA"/>
+                    <connections>
+                        <outlet property="nameInput" destination="yGR-PB-JGL" id="c4X-98-fCd"/>
+                        <segue destination="mkK-Zt-h3g" kind="presentation" identifier="RouteMapControllerView" modalPresentationStyle="fullScreen" id="1Yz-ZY-WNM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AcV-ka-fOG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3300.0000000000005" y="81.696428571428569"/>
+        </scene>
+        <!--Route Map View Controller-->
+        <scene sceneID="OXa-Mq-MQg">
+            <objects>
+                <viewController id="mkK-Zt-h3g" customClass="RouteMapViewController" customModule="compStep" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eWX-Tj-j1J">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7d0-bX-z6s">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="437"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfX-r7-prB">
+                                <rect key="frame" x="20" y="466" width="374" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fYd-LQ-k0y"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="7d0-bX-z6s" id="d0D-EC-iOx"/>
+                        <outlet property="routeTitle" destination="hfX-r7-prB" id="dxj-dD-VPe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KNf-ra-idt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3300.0000000000005" y="884.59821428571422"/>
         </scene>
     </scenes>
     <resources>
@@ -222,6 +324,9 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

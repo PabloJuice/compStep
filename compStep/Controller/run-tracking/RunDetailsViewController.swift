@@ -79,6 +79,9 @@ class RunDetailsViewController: UIViewController {
         print(polyLine())
         mapView.addOverlay(polyLine())
     }
+    @IBAction func createRouteMapTapped(_ sender: UIButton) {
+        self.performSegue(withIdentifier: .route, sender: nil)
+    }
 }
 
 extension RunDetailsViewController: MKMapViewDelegate{
@@ -91,5 +94,19 @@ extension RunDetailsViewController: MKMapViewDelegate{
         renderer.strokeColor = .black
         renderer.lineWidth = 3
         return renderer
+    }
+}
+
+extension RunDetailsViewController: SegueHandlerType{
+    enum SegueIdentifier: String {
+        case route = "CreateRouteMapViewController"
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segueIdentifier(for: segue){
+            case .route:
+                let destination = segue.destination as! CreateRouteMapViewController
+                destination.locations = run.locations
+        }
     }
 }
