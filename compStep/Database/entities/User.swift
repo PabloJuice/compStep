@@ -22,18 +22,14 @@ class UserEntity: Object, DatabaseObject {
     }
     
     func equals(object: UserEntity) -> Bool {
-        return self.userId == object.userId
+        return self.login == object.login
     }
+
     func isValid() -> Bool{
     //        let loginSample = try NSRegularExpression(pattern: "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$")
     //        let passwordSample = try NSRegularExpression(pattern: "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$")
             let loginSample =  "^[A-Zaa-z0-9._%+-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,6}$"
             let passwordSample = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,}$"
-            if self.login.matches(loginSample) && self.password.matches(passwordSample){
-                return true
-            }
-            else {
-                return false
-            }
+            return self.login.matches(loginSample) && self.password.matches(passwordSample)
         }
 }

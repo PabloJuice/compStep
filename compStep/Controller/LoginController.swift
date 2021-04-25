@@ -28,7 +28,7 @@ class LoginController: UIViewController {
             let user: UserEntity = UserEntity(login: loginField.text!, password: passwordField.text!)
             
             if user.isValid(){
-                if userService.checkIfExists(user) {
+                if userService.checkCredentials(user) {
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let newRunViewController : NewRunViewController = storyboard.instantiateViewController(identifier: "NewRunViewController")
                     navigationController?.pushViewController(newRunViewController, animated: true)
@@ -40,9 +40,10 @@ class LoginController: UIViewController {
             }
             
             print(userService.findAll())
+            print(userService.checkIfExists(user))
         }
         @IBAction func registerAction(_ sender: UIButton) {
-            if !userService.checkIfExists(UserEntity(login: loginField.text!, password: passwordField.text!))  {
+            if !userService.checkIfExists(UserEntity(login: loginField.text!, password: passwordField.text!)) && UserEntity(login: loginField.text!, password: passwordField.text!).isValid()  {
                 userService.save(UserEntity(login: loginField.text!, password: passwordField.text!))
             }else{
                 showErrorAlert(message: "registration failed")

@@ -39,8 +39,15 @@ class UserService{
     func checkIfExists(_ object: UserEntity) -> Bool {
         return findAll()
             .compactMap{UserEntity(value: $0)}
-            .filter {object.equals(object: $0) }
+            .filter {object.login == $0.login }
             .count > 0
+    }
+    
+    func checkCredentials(_ object: UserEntity) -> Bool{
+        return checkIfExists(object) ? findAll()
+            .compactMap{UserEntity(value: $0)}
+            .filter {object.login == $0.login && object.password == $0.password}
+            .count > 0 : false
     }
     
     func findAll() -> Array<UserEntity> {
