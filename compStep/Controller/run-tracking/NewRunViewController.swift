@@ -129,7 +129,6 @@ class NewRunViewController: UIViewController {
     }
 }
 
-
 extension NewRunViewController: SegueHandlerType{
     enum SegueIdentifier: String {
         case details = "RunDetailsViewController"
@@ -153,6 +152,13 @@ extension NewRunViewController: CLLocationManagerDelegate{
             if let lastLocation = locationList.last{
                 let delta = newLocation.distance(from: lastLocation)
                 distance = distance + Measurement(value: delta, unit: UnitLength.meters)
+                
+                var speed: Measurement<UnitSpeed> = FormatDisplay.speed(distance: self.distance, seconds: self.seconds)
+                if speed.value > 15{
+                    stopRun()
+                    
+                }
+                
                 let coordinates = [lastLocation.coordinate, newLocation.coordinate]
                 mapView.addOverlay(MKPolyline(coordinates: coordinates, count: 2))
                 let region = MKCoordinateRegion.init(center: newLocation.coordinate, latitudinalMeters: 500, longitudinalMeters: 500)

@@ -76,7 +76,6 @@ class RunDetailsViewController: UIViewController {
         let region = mapRegion()
         mapView.delegate = self
         mapView.setRegion(region!, animated: true)
-        print(polyLine())
         mapView.addOverlay(polyLine())
     }
     @IBAction func createRouteMapTapped(_ sender: UIButton) {

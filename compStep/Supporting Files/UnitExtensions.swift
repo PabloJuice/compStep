@@ -36,6 +36,10 @@ extension UnitSpeed{
         return UnitSpeed(symbol: "min/mi",
                          converter: UnitConverterPace(coefficient: 60.0 / 1609.34))
     }
+    
+    class var kilometersPerHour: UnitSpeed{
+        return UnitSpeed(symbol: "km/h", converter: UnitConverterPace(coefficient: 0.277778))
+    }
 }
 
 extension String{
