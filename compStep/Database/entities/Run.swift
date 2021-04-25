@@ -48,15 +48,11 @@ class Location : Object{
     var longtitude = RealmOptional<Double>(0)
     var timeStamp : NSDate!
     
-    init(latitude: Double, longtitude : Double) {
-        self.timeStamp = NSDate.init()
+    init(latitude: Double, longtitude : Double, timeStamp: NSDate) {
+        self.timeStamp = timeStamp
         self.latitude = RealmOptional.init(latitude)
         self.longtitude = RealmOptional.init(longtitude)
-    
     }
     
-    override init(){
-        self.timeStamp = NSDate.init()
-    }
-    
+    override init() { }
 }
