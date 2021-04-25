@@ -19,14 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = tabBar
         window?.makeKeyAndVisible()
         
+        let locationManager = LocationManager.shared
+        locationManager.requestWhenInUseAuthorization()
+        
         return true
     }
-
-//    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-//        let locationManager = LocationManager.shared
-//        locationManager.requestWhenInUseAuthorization()
-//        return true
-//    }
 
     // MARK: UISceneSession Lifecycle
 

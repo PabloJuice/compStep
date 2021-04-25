@@ -20,6 +20,12 @@ class RouteMapViewController: UIViewController{
         loadMap()
     }
     
+    @IBAction func backTapped(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "TabBarViewController") as! UIViewController
+        self.present(vc, animated: true, completion: nil)
+    }
+    
     private func polyLine() -> MKPolyline{
         let coords: [CLLocationCoordinate2D] = last.locations.map{ location -> CLLocationCoordinate2D in
             let location = location

@@ -33,6 +33,7 @@ class NewRunViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         runService.deleteAll()
+        timer?.invalidate()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

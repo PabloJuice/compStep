@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import Realm
+import RealmSwift
 
 class TabBarViewController: UITabBarController {
 
+    var user: UserEntity = UserEntity()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
