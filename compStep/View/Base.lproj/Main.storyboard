@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mRg-XZ-HxB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KRj-9e-Qxc">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -425,7 +425,8 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="backTapped:" destination="mkK-Zt-h3g" eventType="touchUpInside" id="Nir-nb-mE2"/>
+                                    <action selector="backTapped:" destination="TjY-td-UrB" eventType="touchUpInside" id="UVf-mT-CpR"/>
+                                    <action selector="backTapped:" destination="mkK-Zt-h3g" eventType="touchUpInside" id="jfH-5e-qEZ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -435,9 +436,11 @@
                     <connections>
                         <outlet property="mapView" destination="7d0-bX-z6s" id="d0D-EC-iOx"/>
                         <outlet property="routeTitle" destination="hfX-r7-prB" id="dxj-dD-VPe"/>
+                        <segue destination="KRj-9e-Qxc" kind="presentation" identifier="RouteToTabBar" modalPresentationStyle="fullScreen" id="K5j-LH-ZRO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KNf-ra-idt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="TjY-td-UrB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3218.840579710145" y="81.696428571428569"/>
         </scene>
@@ -556,6 +559,9 @@
             <point key="canvasLocation" x="-1409" y="1077"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="K5j-LH-ZRO"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="note.text" catalog="system" width="128" height="106"/>
         <image name="person" catalog="system" width="128" height="117"/>

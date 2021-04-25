@@ -20,12 +20,6 @@ class RouteMapViewController: UIViewController{
         loadMap()
     }
     
-    @IBAction func backTapped(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(identifier: "TabBarViewController") as! UIViewController
-        self.present(vc, animated: true, completion: nil)
-    }
-    
     private func polyLine() -> MKPolyline{
         let coords: [CLLocationCoordinate2D] = last.locations.map{ location -> CLLocationCoordinate2D in
             let location = location
@@ -66,6 +60,9 @@ class RouteMapViewController: UIViewController{
         mapView.setRegion(region!, animated: true)
         mapView.addOverlay(polyLine())
     }
+    @IBAction func backTapped(_ sender: UIButton) {
+        self.performSegue(withIdentifier: .tabBar, sender: nil)
+    }
 }
 
 extension RouteMapViewController: MKMapViewDelegate{
@@ -78,5 +75,11 @@ extension RouteMapViewController: MKMapViewDelegate{
         renderer.strokeColor = .black
         renderer.lineWidth = 3
         return renderer
+    }
+}
+
+extension RouteMapViewController: SegueHandlerType{
+    enum SegueIdentifier: String {
+        case tabBar = "RouteToTabBar"
     }
 }

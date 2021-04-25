@@ -124,7 +124,7 @@ class NewRunViewController: UIViewController {
     private func startLocationUpdates(){
         locationManager.delegate = self
         locationManager.activityType = .fitness
-        locationManager.distanceFilter = 10
+        locationManager.distanceFilter = 5
         locationManager.startUpdatingLocation()
     }
 }
