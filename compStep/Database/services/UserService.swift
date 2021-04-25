@@ -8,26 +8,32 @@ class UserService{
     
     func save(_ object: UserEntity) {
         if !checkIfExists(object) {
-            try? realm.write{
+            try! realm.write{
                 realm.add(object)
             }
         }else{
-            delete(object)
-            save(object)
+            try! realm.write{
+                realm.delete(object)
+                save(object)
+            }
         }
     }
     
     func delete(_ object: UserEntity) {
-        let objects = findAll()
-            .compactMap{UserEntity(value: $0)}
-            .filter {!object.equals(object: $0) }
-        
-        deleteAll()
-        objects.forEach{realm.add($0)}
+        try? realm.write{
+            let objects = findAll()
+                .compactMap{UserEntity(value: $0)}
+                .filter {!object.equals(object: $0) }
+            
+            deleteAll()
+            objects.forEach{realm.add($0)}
+        }
     }
     
     func deleteAll() {
-        realm.delete(realm.objects(UserEntity.self))
+        try? realm.write{
+            realm.delete(realm.objects(UserEntity.self))
+        }
     }
     
     func checkIfExists(_ object: UserEntity) -> Bool {

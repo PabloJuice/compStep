@@ -37,3 +37,10 @@ extension UnitSpeed{
                          converter: UnitConverterPace(coefficient: 60.0 / 1609.34))
     }
 }
+
+extension String{
+    func matches(_ regex: String) -> Bool{
+        return (self.range(of: regex, options: .regularExpression, range: nil, locale: nil) != nil)
+    }
+}
+

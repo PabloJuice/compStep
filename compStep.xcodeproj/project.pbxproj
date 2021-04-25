@@ -21,6 +21,13 @@
 		C3794454263473DE009B1889 /* UnitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3794453263473DE009B1889 /* UnitExtensions.swift */; };
 		C379445726347817009B1889 /* FormatDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C379445626347817009B1889 /* FormatDisplay.swift */; };
 		C379445B26347D1D009B1889 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C379445A26347D1D009B1889 /* LocationManager.swift */; };
+		CEDB340F2634DAB20096B603 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB34092634DAB20096B603 /* User.swift */; };
+		CEDB34102634DAB20096B603 /* DatabaseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB340A2634DAB20096B603 /* DatabaseObject.swift */; };
+		CEDB34112634DAB20096B603 /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB340B2634DAB20096B603 /* Run.swift */; };
+		CEDB34122634DAB20096B603 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB340D2634DAB20096B603 /* UserService.swift */; };
+		CEDB34132634DAB20096B603 /* RunService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB340E2634DAB20096B603 /* RunService.swift */; };
+		CEDB34162634DE120096B603 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDB34152634DE120096B603 /* LoginStoryboard.storyboard */; };
+		CEDB34192634DE530096B603 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDB34182634DE530096B603 /* LoginController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +45,13 @@
 		C3794453263473DE009B1889 /* UnitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitExtensions.swift; sourceTree = "<group>"; };
 		C379445626347817009B1889 /* FormatDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatDisplay.swift; sourceTree = "<group>"; };
 		C379445A26347D1D009B1889 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		CEDB34092634DAB20096B603 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CEDB340A2634DAB20096B603 /* DatabaseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseObject.swift; sourceTree = "<group>"; };
+		CEDB340B2634DAB20096B603 /* Run.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Run.swift; sourceTree = "<group>"; };
+		CEDB340D2634DAB20096B603 /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		CEDB340E2634DAB20096B603 /* RunService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunService.swift; sourceTree = "<group>"; };
+		CEDB34152634DE120096B603 /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
+		CEDB34182634DE530096B603 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +105,7 @@
 			children = (
 				C379444326346155009B1889 /* run-tracking */,
 				C3794427263446F2009B1889 /* ViewController.swift */,
+				CEDB34182634DE530096B603 /* LoginController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -105,8 +120,8 @@
 		C379443A26344712009B1889 /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				CE33A8722634625B00CEA354 /* services */,
-				CE33A8712634624B00CEA354 /* entities */,
+				CEDB34082634DAB20096B603 /* entities */,
+				CEDB340C2634DAB20096B603 /* services */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -116,6 +131,7 @@
 			children = (
 				C3794429263446F2009B1889 /* Main.storyboard */,
 				C379442E263446F3009B1889 /* LaunchScreen.storyboard */,
+				CEDB34152634DE120096B603 /* LoginStoryboard.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -145,6 +161,25 @@
 				C379445A26347D1D009B1889 /* LocationManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		CEDB34082634DAB20096B603 /* entities */ = {
+			isa = PBXGroup;
+			children = (
+				CEDB34092634DAB20096B603 /* User.swift */,
+				CEDB340A2634DAB20096B603 /* DatabaseObject.swift */,
+				CEDB340B2634DAB20096B603 /* Run.swift */,
+			);
+			path = entities;
+			sourceTree = "<group>";
+		};
+		CEDB340C2634DAB20096B603 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				CEDB340D2634DAB20096B603 /* UserService.swift */,
+				CEDB340E2634DAB20096B603 /* RunService.swift */,
+			);
+			path = services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +249,7 @@
 				C3794430263446F3009B1889 /* LaunchScreen.storyboard in Resources */,
 				C379442D263446F3009B1889 /* Assets.xcassets in Resources */,
 				C379442B263446F2009B1889 /* Main.storyboard in Resources */,
+				CEDB34162634DE120096B603 /* LoginStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,13 +261,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				C379444926346228009B1889 /* NewRunViewController.swift in Sources */,
+				CEDB34112634DAB20096B603 /* Run.swift in Sources */,
 				C3794428263446F2009B1889 /* ViewController.swift in Sources */,
+				CEDB34102634DAB20096B603 /* DatabaseObject.swift in Sources */,
+				CEDB34192634DE530096B603 /* LoginController.swift in Sources */,
 				C379445026346C0B009B1889 /* StoryboardSupport.swift in Sources */,
+				CEDB34132634DAB20096B603 /* RunService.swift in Sources */,
 				C3794424263446F2009B1889 /* AppDelegate.swift in Sources */,
+				CEDB34122634DAB20096B603 /* UserService.swift in Sources */,
 				C3794426263446F2009B1889 /* SceneDelegate.swift in Sources */,
 				C379445726347817009B1889 /* FormatDisplay.swift in Sources */,
 				C3794454263473DE009B1889 /* UnitExtensions.swift in Sources */,
 				C379444526346178009B1889 /* RunDetailsViewController.swift in Sources */,
+				CEDB340F2634DAB20096B603 /* User.swift in Sources */,
 				C379445B26347D1D009B1889 /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
