@@ -10,13 +10,23 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
+    var window: UIWindow?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let locationManager = LocationManager.shared
-        locationManager.requestWhenInUseAuthorization()
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let tabBar = TabBarViewController()
+        window?.rootViewController = tabBar
+        window?.makeKeyAndVisible()
+        
         return true
     }
+
+//    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+//        let locationManager = LocationManager.shared
+//        locationManager.requestWhenInUseAuthorization()
+//        return true
+//    }
 
     // MARK: UISceneSession Lifecycle
 
