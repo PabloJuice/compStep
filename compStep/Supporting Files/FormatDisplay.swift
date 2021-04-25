@@ -12,7 +12,7 @@ struct FormatDisplay{
         return formatter.string(from: distance)
     }
     
-    static func time(_ seconds: Int) -> String{
+    static func time(_ seconds: Double) -> String{
         let formatter = DateComponentsFormatter()
         formatter.allowedUnits = [.hour, .minute, .second]
         formatter.unitsStyle = .positional
@@ -20,7 +20,7 @@ struct FormatDisplay{
         return formatter.string(from: TimeInterval(seconds))!
     }
     
-    static func pace(distance: Measurement<UnitLength>, seconds: Int, outputUnit: UnitSpeed) -> String{
+    static func pace(distance: Measurement<UnitLength>, seconds: Double, outputUnit: UnitSpeed) -> String{
         let formatter = MeasurementFormatter()
         formatter.unitOptions = [.providedUnit]
         let speedMagnitude = seconds != 0 ? distance.value / Double(seconds) : 0
