@@ -202,17 +202,6 @@
                                             <action selector="startTapped:" destination="K4G-N9-z5x" eventType="touchUpInside" id="agd-lW-thQ"/>
                                         </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IKY-Pw-vq1">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="0.0"/>
-                                        <color key="backgroundColor" systemColor="systemPinkColor"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
-                                        <state key="normal" title="Stop">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="stopTapped:" destination="K4G-N9-z5x" eventType="touchUpInside" id="3U3-yD-cUx"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="374" id="mI0-c0-v0c"/>
@@ -241,7 +230,6 @@
                         <outlet property="DistanceLabel" destination="Hmk-TW-z3c" id="ZP0-Al-DgL"/>
                         <outlet property="PaceLabel" destination="cbG-zg-aKi" id="zD9-lS-Wv0"/>
                         <outlet property="StartButton" destination="5ra-HK-stV" id="vL3-Hu-qV2"/>
-                        <outlet property="StopButton" destination="IKY-Pw-vq1" id="I1B-Z7-LaW"/>
                         <outlet property="TimeLabel" destination="vGx-6m-L85" id="iYU-vh-7V3"/>
                         <outlet property="mapView" destination="CuQ-w1-PZs" id="EeX-oy-rR5"/>
                         <outlet property="mapViewContainer" destination="L1M-HD-dKM" id="Gdi-Tk-eq3"/>
@@ -578,9 +566,6 @@
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

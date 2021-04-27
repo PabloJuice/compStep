@@ -19,7 +19,6 @@ class NewRunViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     
     @IBOutlet weak var StartButton: UIButton!
-    @IBOutlet weak var StopButton: UIButton!
     
     private let locationManager = LocationManager.shared
     private var seconds = 0.0
@@ -29,6 +28,8 @@ class NewRunViewController: UIViewController {
     
     private var runService: RunService = RunService()
     private var run: RunEntity = RunEntity()
+    
+    private var runStarted: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,31 +45,37 @@ class NewRunViewController: UIViewController {
     
     
     @IBAction func startTapped(_ sender: UIButton) {
-        self.startRun()
-    }
-    
-    @IBAction func stopTapped(_ sender: UIButton) {
-        let alertController = UIAlertController(title: "Want to end run?",
-                                                message: "Do you with to end your run?",
-                                                preferredStyle: .actionSheet)
-        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-        alertController.addAction(UIAlertAction(title: "Save", style: .default) {_ in
-            self.stopRun()
-            self.saveRun()
-            self.performSegue(withIdentifier: .details, sender: nil)
-        })
-        alertController.addAction(UIAlertAction(title: "Discard", style: .destructive){_ in
-            self.stopRun()
-            _ = self.navigationController?.popToRootViewController(animated: true)
-        })
+        if runStarted == false {
+            self.startRun()
+            runStarted = true
+        }
+        else{
+            let alertController = UIAlertController(title: "Want to end run?",
+                                                    message: "Do you with to end your run?",
+                                                    preferredStyle: .actionSheet)
+            alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+            alertController.addAction(UIAlertAction(title: "Save", style: .default) {_ in
+                self.stopRun()
+                self.saveRun()
+                self.performSegue(withIdentifier: .details, sender: nil)
+            })
+            alertController.addAction(UIAlertAction(title: "Discard", style: .destructive){_ in
+                self.stopRun()
+                _ = self.navigationController?.popToRootViewController(animated: true)
+            })
+            
+            present(alertController, animated: true)
+            runStarted = false
+        }
         
-        present(alertController, animated: true)
     }
     
     private func startRun(){
         DataStack.isHidden = false
-        StartButton.isHidden = true
-        StopButton.isHidden = false
+        
+        StartButton.setTitle("Stop", for: .normal)
+        StartButton.backgroundColor = UIColor.red
+        
         mapViewContainer.isHidden = false
         mapView.removeOverlays(mapView.overlays)
         mapView.delegate = self
@@ -85,8 +92,10 @@ class NewRunViewController: UIViewController {
     
     private func stopRun(){
         DataStack.isHidden = true
-        StartButton.isHidden = false
-        StopButton.isHidden = true
+        
+        StartButton.setTitle("Start", for: .normal)
+        StartButton.backgroundColor = UIColor.green
+        
         mapViewContainer.isHidden = true
         locationManager.stopUpdatingLocation()
     }
